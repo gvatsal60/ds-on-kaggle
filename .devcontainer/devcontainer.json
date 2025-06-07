@@ -17,15 +17,9 @@
         "marvhen.reflow-markdown",
         "ms-azuretools.vscode-docker",
         "streetsidesoftware.code-spell-checker",
-        "usernamehw.errorlens"
+        "MindpathTechnologyLimited.code-error-lens"
       ],
       "settings": {
-        "[cpp]": {
-          "C_Cpp.autocompleteAddParentheses": true,
-          "C_Cpp.codeAnalysis.clangTidy.enabled": true,
-          "C_Cpp.intelliSenseEngine": "default",
-          "editor.defaultFormatter": "ms-vscode.cpptools"
-        },
         "[dockercompose]": {
           "editor.autoIndent": "advanced",
           "editor.defaultFormatter": "ms-azuretools.vscode-docker",
@@ -88,7 +82,7 @@
       }
     }
   },
-  "image": "mcr.microsoft.com/devcontainers/javascript-node",
+  "image": "mcr.microsoft.com/devcontainers/anaconda:latest",
   "mounts": [
     "source=${localWorkspaceFolder}/snippets,target=${containerWorkspaceFolder}/.vscode,type=bind,consistency=cached"
   ],
