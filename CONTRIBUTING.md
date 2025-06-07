@@ -1,4 +1,4 @@
-# Contributing to [ds-on-kaggle](#contributing-to-project-name)
+# Contributing to [ds-on-kaggle](https://github.com/gvatsal60/ds-on-kaggle.git)
 
 Thank you for your interest in contributing to [ds-on-kaggle](https)!
 Please follow these guidelines to ensure a smooth process.
