@@ -10,6 +10,7 @@
         "Tyriar.sort-lines",
         "bradzacher.vscode-copy-filename",
         "foxundermoon.shell-format",
+        "ms-toolsai.jupyter",
         "streetsidesoftware.code-spell-checker"
       ],
       "settings": {
