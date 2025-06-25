@@ -1,0 +1,3698 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "1ee28e1f",
+   "metadata": {
+    "papermill": {
+     "duration": 0.023541,
+     "end_time": "2025-06-25T11:25:12.924580",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:12.901039",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# 🎯 100 NumPy Exercises\n",
+    "\n",
+    "Welcome to **100 NumPy Exercises** — a curated collection of problems designed to sharpen your skills in NumPy, whether you're a beginner or a seasoned data wrangler.\n",
+    "\n",
+    "---\n",
+    "\n",
+    "📌 **About This Collection**\n",
+    "\n",
+    "This set of exercises has been gathered from:\n",
+    "- The **NumPy mailing list**\n",
+    "- **Stack Overflow** discussions\n",
+    "- The **official NumPy documentation**\n",
+    "\n",
+    "The primary goal is to serve as:\n",
+    "- 📚 A quick reference for both new and experienced users  \n",
+    "- 🎓 A practical toolkit for educators and learners\n",
+    "\n",
+    "---\n",
+    "\n",
+    "💬 **Suggestions or Corrections?**\n",
+    "\n",
+    "If you find an error or have a better solution, feel free to contribute!  \n",
+    "➡️ Open an issue here: [numpy-100 GitHub Issues](https://github.com/rougier/numpy-100/issues)\n",
+    "\n",
+    "---\n",
+    "\n",
+    "📄 **Credits and Licensing**\n",
+    "\n",
+    "Includes code and ideas derived from work by [Nicolas P. Rougier](https://github.com/rougier), \n",
+    "used in accordance with the terms of the original [license](https://github.com/rougier/numpy-100/blob/master/LICENSE.txt).\n",
+    "\n",
+    "---\n",
+    "\n",
+    "🧠 **Ready to dive in?**  \n",
+    "Let’s explore the power of NumPy — one exercise at a time!\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3bc61900",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019431,
+     "end_time": "2025-06-25T11:25:12.964491",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:12.945060",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 1. Import the numpy package under the name `np` (★☆☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "2ccce470",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2025-06-25T11:25:13.005365Z",
+     "iopub.status.busy": "2025-06-25T11:25:13.005034Z",
+     "iopub.status.idle": "2025-06-25T11:25:13.012045Z",
+     "shell.execute_reply": "2025-06-25T11:25:13.011455Z"
+    },
+    "papermill": {
+     "duration": 0.027836,
+     "end_time": "2025-06-25T11:25:13.013243",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:12.985407",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "import numpy as np"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e83fec28",
+   "metadata": {
+    "papermill": {
+     "duration": 0.018591,
+     "end_time": "2025-06-25T11:25:13.051362",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:13.032771",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 2. Print the numpy version and the configuration (★☆☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "0a3c805e",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2025-06-25T11:25:13.156463Z",
+     "iopub.status.busy": "2025-06-25T11:25:13.156081Z",
+     "iopub.status.idle": "2025-06-25T11:25:13.161599Z",
+     "shell.execute_reply": "2025-06-25T11:25:13.160625Z"
+    },
+    "papermill": {
+     "duration": 0.09297,
+     "end_time": "2025-06-25T11:25:13.163054",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:13.070084",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "★ NumPy Version: 1.26.4\n",
+      "☆ NumPy Configuration:\n",
+      "blas_armpl_info:\n",
+      "  NOT AVAILABLE\n",
+      "blas_mkl_info:\n",
+      "    libraries = ['mkl_rt', 'pthread']\n",
+      "    library_dirs = ['/home/sat_bot/base/conda-bld/numpy_and_dev_1715296241721/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_p/lib']\n",
+      "    define_macros = [('SCIPY_MKL_H', None), ('HAVE_CBLAS', None)]\n",
+      "    include_dirs = ['/home/sat_bot/base/conda-bld/numpy_and_dev_1715296241721/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_p/include']\n",
+      "blas_opt_info:\n",
+      "    libraries = ['mkl_rt', 'pthread']\n",
+      "    library_dirs = ['/home/sat_bot/base/conda-bld/numpy_and_dev_1715296241721/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_p/lib']\n",
+      "    define_macros = [('SCIPY_MKL_H', None), ('HAVE_CBLAS', None)]\n",
+      "    include_dirs = ['/home/sat_bot/base/conda-bld/numpy_and_dev_1715296241721/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_p/include']\n",
+      "lapack_armpl_info:\n",
+      "  NOT AVAILABLE\n",
+      "lapack_mkl_info:\n",
+      "    libraries = ['mkl_rt', 'pthread']\n",
+      "    library_dirs = ['/home/sat_bot/base/conda-bld/numpy_and_dev_1715296241721/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_p/lib']\n",
+      "    define_macros = [('SCIPY_MKL_H', None), ('HAVE_CBLAS', None)]\n",
+      "    include_dirs = ['/home/sat_bot/base/conda-bld/numpy_and_dev_1715296241721/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_p/include']\n",
+      "lapack_opt_info:\n",
+      "    libraries = ['mkl_rt', 'pthread']\n",
+      "    library_dirs = ['/home/sat_bot/base/conda-bld/numpy_and_dev_1715296241721/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_p/lib']\n",
+      "    define_macros = [('SCIPY_MKL_H', None), ('HAVE_CBLAS', None)]\n",
+      "    include_dirs = ['/home/sat_bot/base/conda-bld/numpy_and_dev_1715296241721/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_p/include']\n",
+      "Supported SIMD extensions in this NumPy install:\n",
+      "    baseline = SSE,SSE2,SSE3\n",
+      "    found = SSSE3,SSE41,POPCNT,SSE42,AVX,F16C,FMA3,AVX2\n",
+      "    not found = AVX512F,AVX512CD,AVX512_KNL,AVX512_KNM,AVX512_SKX,AVX512_CLX,AVX512_CNL,AVX512_ICL,AVX512_SPR\n"
+     ]
+    }
+   ],
+   "source": [
+    "print('★ NumPy Version:', np.__version__)\n",
+    "print('☆ NumPy Configuration:')\n",
+    "np.show_config()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7faee260",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019483,
+     "end_time": "2025-06-25T11:25:13.202899",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:13.183416",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 3. Create a null vector of size 10 (★☆☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "e4fdcb7a",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2025-06-25T11:25:13.244191Z",
+     "iopub.status.busy": "2025-06-25T11:25:13.243459Z",
+     "iopub.status.idle": "2025-06-25T11:25:13.249803Z",
+     "shell.execute_reply": "2025-06-25T11:25:13.249047Z"
+    },
+    "papermill": {
+     "duration": 0.028778,
+     "end_time": "2025-06-25T11:25:13.251117",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:13.222339",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])"
+      ]
+     },
+     "execution_count": 3,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "null_vec = np.zeros(10)\n",
+    "null_vec"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b5c07c2a",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019042,
+     "end_time": "2025-06-25T11:25:13.291466",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:13.272424",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 4. How to find the memory size of any array (★☆☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "f18e14f2",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2025-06-25T11:25:13.332075Z",
+     "iopub.status.busy": "2025-06-25T11:25:13.331798Z",
+     "iopub.status.idle": "2025-06-25T11:25:13.336459Z",
+     "shell.execute_reply": "2025-06-25T11:25:13.335653Z"
+    },
+    "papermill": {
+     "duration": 0.025804,
+     "end_time": "2025-06-25T11:25:13.337819",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:13.312015",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Null Vector Size: 10\n",
+      "Null Vector ItemSize: 8\n"
+     ]
+    }
+   ],
+   "source": [
+    "print('Null Vector Size:', null_vec.size)\n",
+    "print('Null Vector ItemSize:', null_vec.itemsize)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c494b4b5",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019202,
+     "end_time": "2025-06-25T11:25:13.377604",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:13.358402",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 5. How to get the documentation of the numpy add function from the command line? (★☆☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "27a337fc",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2025-06-25T11:25:13.417422Z",
+     "iopub.status.busy": "2025-06-25T11:25:13.416741Z",
+     "iopub.status.idle": "2025-06-25T11:25:13.421500Z",
+     "shell.execute_reply": "2025-06-25T11:25:13.420498Z"
+    },
+    "papermill": {
+     "duration": 0.026436,
+     "end_time": "2025-06-25T11:25:13.422914",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:13.396478",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "add(x1, x2, /, out=None, *, where=True, casting='same_kind', order='K', dtype=None, subok=True[, signature, extobj])\n",
+      "\n",
+      "Add arguments element-wise.\n",
+      "\n",
+      "Parameters\n",
+      "----------\n",
+      "x1, x2 : array_like\n",
+      "    The arrays to be added.\n",
+      "    If ``x1.shape != x2.shape``, they must be broadcastable to a common\n",
+      "    shape (which becomes the shape of the output).\n",
+      "out : ndarray, None, or tuple of ndarray and None, optional\n",
+      "    A location into which the result is stored. If provided, it must have\n",
+      "    a shape that the inputs broadcast to. If not provided or None,\n",
+      "    a freshly-allocated array is returned. A tuple (possible only as a\n",
+      "    keyword argument) must have length equal to the number of outputs.\n",
+      "where : array_like, optional\n",
+      "    This condition is broadcast over the input. At locations where the\n",
+      "    condition is True, the `out` array will be set to the ufunc result.\n",
+      "    Elsewhere, the `out` array will retain its original value.\n",
+      "    Note that if an uninitialized `out` array is created via the default\n",
+      "    ``out=None``, locations within it where the condition is False will\n",
+      "    remain uninitialized.\n",
+      "**kwargs\n",
+      "    For other keyword-only arguments, see the\n",
+      "    :ref:`ufunc docs <ufuncs.kwargs>`.\n",
+      "\n",
+      "Returns\n",
+      "-------\n",
+      "add : ndarray or scalar\n",
+      "    The sum of `x1` and `x2`, element-wise.\n",
+      "    This is a scalar if both `x1` and `x2` are scalars.\n",
+      "\n",
+      "Notes\n",
+      "-----\n",
+      "Equivalent to `x1` + `x2` in terms of array broadcasting.\n",
+      "\n",
+      "Examples\n",
+      "--------\n",
+      ">>> np.add(1.0, 4.0)\n",
+      "5.0\n",
+      ">>> x1 = np.arange(9.0).reshape((3, 3))\n",
+      ">>> x2 = np.arange(3.0)\n",
+      ">>> np.add(x1, x2)\n",
+      "array([[  0.,   2.,   4.],\n",
+      "       [  3.,   5.,   7.],\n",
+      "       [  6.,   8.,  10.]])\n",
+      "\n",
+      "The ``+`` operator can be used as a shorthand for ``np.add`` on ndarrays.\n",
+      "\n",
+      ">>> x1 = np.arange(9.0).reshape((3, 3))\n",
+      ">>> x2 = np.arange(3.0)\n",
+      ">>> x1 + x2\n",
+      "array([[ 0.,  2.,  4.],\n",
+      "       [ 3.,  5.,  7.],\n",
+      "       [ 6.,  8., 10.]])\n"
+     ]
+    }
+   ],
+   "source": [
+    "# np.add?\n",
+    "# print(np.info('add'))\n",
+    "print(np.add.__doc__)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "75623f6f",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019164,
+     "end_time": "2025-06-25T11:25:13.461511",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:13.442347",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 6. Create a null vector of size 10 but the fifth value which is 1 (★☆☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "e0bb0dd8",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019404,
+     "end_time": "2025-06-25T11:25:13.499959",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:13.480555",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2467ae68",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019438,
+     "end_time": "2025-06-25T11:25:13.539063",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:13.519625",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 7. Create a vector with values ranging from 10 to 49 (★☆☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "1e63eca1",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019314,
+     "end_time": "2025-06-25T11:25:13.577377",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:13.558063",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3d6dbc9a",
+   "metadata": {
+    "papermill": {
+     "duration": 0.018988,
+     "end_time": "2025-06-25T11:25:13.617166",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:13.598178",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 8. Reverse a vector (first element becomes last) (★☆☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "739b6ed3",
+   "metadata": {
+    "papermill": {
+     "duration": 0.018599,
+     "end_time": "2025-06-25T11:25:13.654815",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:13.636216",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0fe69a42",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019465,
+     "end_time": "2025-06-25T11:25:13.693243",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:13.673778",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 9. Create a 3x3 matrix with values ranging from 0 to 8 (★☆☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "221412fe",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019972,
+     "end_time": "2025-06-25T11:25:13.733504",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:13.713532",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1fc0d5e2",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019828,
+     "end_time": "2025-06-25T11:25:13.772395",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:13.752567",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 10. Find indices of non-zero elements from [1,2,0,0,4,0] (★☆☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "fdbe4b88",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019993,
+     "end_time": "2025-06-25T11:25:13.811528",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:13.791535",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "93f863c4",
+   "metadata": {
+    "papermill": {
+     "duration": 0.018737,
+     "end_time": "2025-06-25T11:25:13.849497",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:13.830760",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 11. Create a 3x3 identity matrix (★☆☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "e22f10a5",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020183,
+     "end_time": "2025-06-25T11:25:13.889008",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:13.868825",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1c9b6c91",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019397,
+     "end_time": "2025-06-25T11:25:13.928882",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:13.909485",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 12. Create a 3x3x3 array with random values (★☆☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "206d41f1",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019783,
+     "end_time": "2025-06-25T11:25:13.967735",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:13.947952",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "afcd3b8d",
+   "metadata": {
+    "papermill": {
+     "duration": 0.021217,
+     "end_time": "2025-06-25T11:25:14.010012",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:13.988795",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 13. Create a 10x10 array with random values and find the minimum and maximum values (★☆☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "5c844eea",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019479,
+     "end_time": "2025-06-25T11:25:14.050176",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:14.030697",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3a1bb5be",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020353,
+     "end_time": "2025-06-25T11:25:14.090359",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:14.070006",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 14. Create a random vector of size 30 and find the mean value (★☆☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "9e55a79f",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019711,
+     "end_time": "2025-06-25T11:25:14.130897",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:14.111186",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "5589a251",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019484,
+     "end_time": "2025-06-25T11:25:14.170407",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:14.150923",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 15. Create a 2d array with 1 on the border and 0 inside (★☆☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "164056eb",
+   "metadata": {
+    "papermill": {
+     "duration": 0.01965,
+     "end_time": "2025-06-25T11:25:14.209341",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:14.189691",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "872769db",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019603,
+     "end_time": "2025-06-25T11:25:14.248823",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:14.229220",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 16. How to add a border (filled with 0's) around an existing array? (★☆☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "d97179c4",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019772,
+     "end_time": "2025-06-25T11:25:14.287965",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:14.268193",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "fa52f158",
+   "metadata": {
+    "papermill": {
+     "duration": 0.018965,
+     "end_time": "2025-06-25T11:25:14.326683",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:14.307718",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 17. What is the result of the following expression? (★☆☆)\n",
+    "```python\n",
+    "0 * np.nan\n",
+    "np.nan == np.nan\n",
+    "np.inf > np.nan\n",
+    "np.nan - np.nan\n",
+    "np.nan in set([np.nan])\n",
+    "0.3 == 3 * 0.1\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "aeb430df",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019115,
+     "end_time": "2025-06-25T11:25:14.366463",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:14.347348",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6e5f14af",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019095,
+     "end_time": "2025-06-25T11:25:14.406340",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:14.387245",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 18. Create a 5x5 matrix with values 1,2,3,4 just below the diagonal (★☆☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a29f72e1",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019926,
+     "end_time": "2025-06-25T11:25:14.446430",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:14.426504",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "760cf466",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019914,
+     "end_time": "2025-06-25T11:25:14.487017",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:14.467103",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 19. Create a 8x8 matrix and fill it with a checkerboard pattern (★☆☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "17907071",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019466,
+     "end_time": "2025-06-25T11:25:14.527229",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:14.507763",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "bb64d908",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019243,
+     "end_time": "2025-06-25T11:25:14.567030",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:14.547787",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 20. Consider a (6,7,8) shape array, what is the index (x,y,z) of the 100th element? (★☆☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "53075f7e",
+   "metadata": {
+    "papermill": {
+     "duration": 0.02181,
+     "end_time": "2025-06-25T11:25:14.608865",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:14.587055",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0c323b9b",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020181,
+     "end_time": "2025-06-25T11:25:14.649206",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:14.629025",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 21. Create a checkerboard 8x8 matrix using the tile function (★☆☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "93ca4f11",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020007,
+     "end_time": "2025-06-25T11:25:14.690428",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:14.670421",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f0ba3698",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019616,
+     "end_time": "2025-06-25T11:25:14.730407",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:14.710791",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 22. Normalize a 5x5 random matrix (★☆☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "5be7e9c1",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019755,
+     "end_time": "2025-06-25T11:25:14.769856",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:14.750101",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0e5ed04a",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019563,
+     "end_time": "2025-06-25T11:25:14.808652",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:14.789089",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 23. Create a custom dtype that describes a color as four unsigned bytes (RGBA) (★☆☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "0a48baf0",
+   "metadata": {
+    "papermill": {
+     "duration": 0.018747,
+     "end_time": "2025-06-25T11:25:14.846256",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:14.827509",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "70916f4d",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019786,
+     "end_time": "2025-06-25T11:25:14.885586",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:14.865800",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 24. Multiply a 5x3 matrix by a 3x2 matrix (real matrix product) (★☆☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a8e78fb4",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019224,
+     "end_time": "2025-06-25T11:25:14.924020",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:14.904796",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e5f83b2b",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019819,
+     "end_time": "2025-06-25T11:25:14.963165",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:14.943346",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 25. Given a 1D array, negate all elements which are between 3 and 8, in place. (★☆☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "049189b0",
+   "metadata": {
+    "papermill": {
+     "duration": 0.018802,
+     "end_time": "2025-06-25T11:25:15.002451",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:14.983649",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "acb43f49",
+   "metadata": {
+    "papermill": {
+     "duration": 0.018714,
+     "end_time": "2025-06-25T11:25:15.040199",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:15.021485",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 26. What is the output of the following script? (★☆☆)\n",
+    "```python\n",
+    "# Author: Jake VanderPlas\n",
+    "\n",
+    "print(sum(range(5),-1))\n",
+    "from numpy import *\n",
+    "print(sum(range(5),-1))\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "b39f45b6",
+   "metadata": {
+    "papermill": {
+     "duration": 0.018837,
+     "end_time": "2025-06-25T11:25:15.077890",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:15.059053",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e4415ca7",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019883,
+     "end_time": "2025-06-25T11:25:15.117195",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:15.097312",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 27. Consider an integer vector Z, which of these expressions are legal? (★☆☆)\n",
+    "```python\n",
+    "Z**Z\n",
+    "2 << Z >> 2\n",
+    "Z <- Z\n",
+    "1j*Z\n",
+    "Z/1/1\n",
+    "Z<Z>Z\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "b1e27be1",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020283,
+     "end_time": "2025-06-25T11:25:15.157214",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:15.136931",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "43bad802",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019172,
+     "end_time": "2025-06-25T11:25:15.197358",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:15.178186",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 28. What are the result of the following expressions? (★☆☆)\n",
+    "```python\n",
+    "np.array(0) / np.array(0)\n",
+    "np.array(0) // np.array(0)\n",
+    "np.array([np.nan]).astype(int).astype(float)\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "3222f422",
+   "metadata": {
+    "papermill": {
+     "duration": 0.018971,
+     "end_time": "2025-06-25T11:25:15.235442",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:15.216471",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "88fc3167",
+   "metadata": {
+    "papermill": {
+     "duration": 0.018853,
+     "end_time": "2025-06-25T11:25:15.274423",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:15.255570",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 29. How to round away from zero a float array ? (★☆☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "dc0e5650",
+   "metadata": {
+    "papermill": {
+     "duration": 0.018698,
+     "end_time": "2025-06-25T11:25:15.312684",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:15.293986",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "16753c27",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019378,
+     "end_time": "2025-06-25T11:25:15.351815",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:15.332437",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 30. How to find common values between two arrays? (★☆☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "0ba7f664",
+   "metadata": {
+    "papermill": {
+     "duration": 0.018941,
+     "end_time": "2025-06-25T11:25:15.390568",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:15.371627",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "39746ef3",
+   "metadata": {
+    "papermill": {
+     "duration": 0.018887,
+     "end_time": "2025-06-25T11:25:15.428660",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:15.409773",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 31. How to ignore all numpy warnings (not recommended)? (★☆☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "ffec42b0",
+   "metadata": {
+    "papermill": {
+     "duration": 0.018642,
+     "end_time": "2025-06-25T11:25:15.466456",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:15.447814",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "9562d5d2",
+   "metadata": {
+    "papermill": {
+     "duration": 0.018688,
+     "end_time": "2025-06-25T11:25:15.504204",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:15.485516",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 32. Is the following expressions true? (★☆☆)\n",
+    "```python\n",
+    "np.sqrt(-1) == np.emath.sqrt(-1)\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "8ddb9b98",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019041,
+     "end_time": "2025-06-25T11:25:15.543488",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:15.524447",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "64b7d74f",
+   "metadata": {
+    "papermill": {
+     "duration": 0.023829,
+     "end_time": "2025-06-25T11:25:15.586794",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:15.562965",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 33. How to get the dates of yesterday, today and tomorrow? (★☆☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "9f37f660",
+   "metadata": {
+    "papermill": {
+     "duration": 0.022574,
+     "end_time": "2025-06-25T11:25:15.638326",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:15.615752",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "10861744",
+   "metadata": {
+    "papermill": {
+     "duration": 0.018834,
+     "end_time": "2025-06-25T11:25:15.677661",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:15.658827",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 34. How to get all the dates corresponding to the month of July 2016? (★★☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "3315a4fe",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020965,
+     "end_time": "2025-06-25T11:25:15.718420",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:15.697455",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "fc9a7a57",
+   "metadata": {
+    "papermill": {
+     "duration": 0.031795,
+     "end_time": "2025-06-25T11:25:15.777247",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:15.745452",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 35. How to compute ((A+B)*(-A/2)) in place (without copy)? (★★☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "0dee31db",
+   "metadata": {
+    "papermill": {
+     "duration": 0.022184,
+     "end_time": "2025-06-25T11:25:15.831809",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:15.809625",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0eb45473",
+   "metadata": {
+    "papermill": {
+     "duration": 0.022156,
+     "end_time": "2025-06-25T11:25:15.878657",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:15.856501",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 36. Extract the integer part of a random array of positive numbers using 4 different methods (★★☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "9ec438e7",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020957,
+     "end_time": "2025-06-25T11:25:15.922729",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:15.901772",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "369e1731",
+   "metadata": {
+    "papermill": {
+     "duration": 0.01949,
+     "end_time": "2025-06-25T11:25:15.962458",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:15.942968",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 37. Create a 5x5 matrix with row values ranging from 0 to 4 (★★☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "3cfb3b18",
+   "metadata": {
+    "papermill": {
+     "duration": 0.018936,
+     "end_time": "2025-06-25T11:25:16.001799",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:15.982863",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "fcefef5d",
+   "metadata": {
+    "papermill": {
+     "duration": 0.018644,
+     "end_time": "2025-06-25T11:25:16.040250",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:16.021606",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 38. Consider a generator function that generates 10 integers and use it to build an array (★☆☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "48fde444",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020497,
+     "end_time": "2025-06-25T11:25:16.080705",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:16.060208",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1081efd8",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019273,
+     "end_time": "2025-06-25T11:25:16.120066",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:16.100793",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 39. Create a vector of size 10 with values ranging from 0 to 1, both excluded (★★☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "30a4bff4",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020104,
+     "end_time": "2025-06-25T11:25:16.160660",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:16.140556",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "9e595dea",
+   "metadata": {
+    "papermill": {
+     "duration": 0.021533,
+     "end_time": "2025-06-25T11:25:16.202565",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:16.181032",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 40. Create a random vector of size 10 and sort it (★★☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "8124c4fa",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019072,
+     "end_time": "2025-06-25T11:25:16.241692",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:16.222620",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "91df2622",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020834,
+     "end_time": "2025-06-25T11:25:16.281876",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:16.261042",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 41. How to sum a small array faster than np.sum? (★★☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "dc98d231",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020297,
+     "end_time": "2025-06-25T11:25:16.324891",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:16.304594",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "527d4a82",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019792,
+     "end_time": "2025-06-25T11:25:16.365633",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:16.345841",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 42. Consider two random arrays A and B, check if they are equal (★★☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "e025c209",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019715,
+     "end_time": "2025-06-25T11:25:16.404916",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:16.385201",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d70b8a0d",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020029,
+     "end_time": "2025-06-25T11:25:16.444246",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:16.424217",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 43. Make an array immutable (read-only) (★★☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "c8fcde0f",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020047,
+     "end_time": "2025-06-25T11:25:16.484954",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:16.464907",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b42bb5f3",
+   "metadata": {
+    "papermill": {
+     "duration": 0.018942,
+     "end_time": "2025-06-25T11:25:16.523392",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:16.504450",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 44. Consider a random 10x2 matrix representing cartesian coordinates, convert them to polar coordinates (★★☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "d442e165",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019941,
+     "end_time": "2025-06-25T11:25:16.563772",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:16.543831",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "8253ba3b",
+   "metadata": {
+    "papermill": {
+     "duration": 0.02161,
+     "end_time": "2025-06-25T11:25:16.605392",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:16.583782",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 45. Create random vector of size 10 and replace the maximum value by 0 (★★☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "fcf25235",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019731,
+     "end_time": "2025-06-25T11:25:16.645570",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:16.625839",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d2ac5635",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020128,
+     "end_time": "2025-06-25T11:25:16.685410",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:16.665282",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 46. Create a structured array with `x` and `y` coordinates covering the [0,1]x[0,1] area (★★☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "e964d2c6",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019795,
+     "end_time": "2025-06-25T11:25:16.726554",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:16.706759",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ce05f347",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019695,
+     "end_time": "2025-06-25T11:25:16.765949",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:16.746254",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 47. Given two arrays, X and Y, construct the Cauchy matrix C (Cij =1/(xi - yj)) (★★☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "c5f5bb4e",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020347,
+     "end_time": "2025-06-25T11:25:16.807086",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:16.786739",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "72b81992",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020535,
+     "end_time": "2025-06-25T11:25:16.847713",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:16.827178",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 48. Print the minimum and maximum representable values for each numpy scalar type (★★☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f51b5b9f",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020009,
+     "end_time": "2025-06-25T11:25:16.887556",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:16.867547",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "5d9d4648",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020629,
+     "end_time": "2025-06-25T11:25:16.929680",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:16.909051",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 49. How to print all the values of an array? (★★☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a6e32e02",
+   "metadata": {
+    "papermill": {
+     "duration": 0.021156,
+     "end_time": "2025-06-25T11:25:16.970357",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:16.949201",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3ade0249",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019298,
+     "end_time": "2025-06-25T11:25:17.009143",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:16.989845",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 50. How to find the closest value (to a given scalar) in a vector? (★★☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "db143bb0",
+   "metadata": {
+    "papermill": {
+     "duration": 0.021147,
+     "end_time": "2025-06-25T11:25:17.049809",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:17.028662",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "05c180c4",
+   "metadata": {
+    "papermill": {
+     "duration": 0.021054,
+     "end_time": "2025-06-25T11:25:17.090598",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:17.069544",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 51. Create a structured array representing a position (x,y) and a color (r,g,b) (★★☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "89f836e3",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020787,
+     "end_time": "2025-06-25T11:25:17.131690",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:17.110903",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "544c4702",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019533,
+     "end_time": "2025-06-25T11:25:17.171325",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:17.151792",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 52. Consider a random vector with shape (100,2) representing coordinates, find point by point distances (★★☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "b7c6ec40",
+   "metadata": {
+    "papermill": {
+     "duration": 0.021334,
+     "end_time": "2025-06-25T11:25:17.212544",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:17.191210",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e37adb6e",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020087,
+     "end_time": "2025-06-25T11:25:17.252279",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:17.232192",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 53. How to convert a float (32 bits) array into an integer (32 bits) array in place?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "e8ed0981",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020685,
+     "end_time": "2025-06-25T11:25:17.294414",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:17.273729",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "04b700c9",
+   "metadata": {
+    "papermill": {
+     "duration": 0.01946,
+     "end_time": "2025-06-25T11:25:17.336137",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:17.316677",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 54. How to read the following file? (★★☆)\n",
+    "```\n",
+    "1, 2, 3, 4, 5\n",
+    "6,  ,  , 7, 8\n",
+    " ,  , 9,10,11\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "73beed2a",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019495,
+     "end_time": "2025-06-25T11:25:17.375075",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:17.355580",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "bdcb2d99",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019354,
+     "end_time": "2025-06-25T11:25:17.415053",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:17.395699",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 55. What is the equivalent of enumerate for numpy arrays? (★★☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "bac4a189",
+   "metadata": {
+    "papermill": {
+     "duration": 0.01954,
+     "end_time": "2025-06-25T11:25:17.454056",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:17.434516",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "33250670",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020345,
+     "end_time": "2025-06-25T11:25:17.494255",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:17.473910",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 56. Generate a generic 2D Gaussian-like array (★★☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "61ba0525",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019668,
+     "end_time": "2025-06-25T11:25:17.533441",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:17.513773",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f6e75841",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019075,
+     "end_time": "2025-06-25T11:25:17.571894",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:17.552819",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 57. How to randomly place p elements in a 2D array? (★★☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f85d46c5",
+   "metadata": {
+    "papermill": {
+     "duration": 0.02049,
+     "end_time": "2025-06-25T11:25:17.611910",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:17.591420",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "551d6195",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019088,
+     "end_time": "2025-06-25T11:25:17.651443",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:17.632355",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 58. Subtract the mean of each row of a matrix (★★☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "7766a717",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019188,
+     "end_time": "2025-06-25T11:25:17.690966",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:17.671778",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "954dfbb2",
+   "metadata": {
+    "papermill": {
+     "duration": 0.01913,
+     "end_time": "2025-06-25T11:25:17.729526",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:17.710396",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 59. How to sort an array by the nth column? (★★☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "0ec02233",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019667,
+     "end_time": "2025-06-25T11:25:17.768512",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:17.748845",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d81e924f",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019124,
+     "end_time": "2025-06-25T11:25:17.807362",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:17.788238",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 60. How to tell if a given 2D array has null columns? (★★☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "5876a731",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020586,
+     "end_time": "2025-06-25T11:25:17.847443",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:17.826857",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2049bf7e",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019863,
+     "end_time": "2025-06-25T11:25:17.887669",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:17.867806",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 61. Find the nearest value from a given value in an array (★★☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "4ec668f8",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019546,
+     "end_time": "2025-06-25T11:25:17.928335",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:17.908789",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b71bc0a9",
+   "metadata": {
+    "papermill": {
+     "duration": 0.021232,
+     "end_time": "2025-06-25T11:25:17.970904",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:17.949672",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 62. Considering two arrays with shape (1,3) and (3,1), how to compute their sum using an iterator? (★★☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "40c3443c",
+   "metadata": {
+    "papermill": {
+     "duration": 0.01912,
+     "end_time": "2025-06-25T11:25:18.012769",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:17.993649",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "370c22c8",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020583,
+     "end_time": "2025-06-25T11:25:18.052804",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:18.032221",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 63. Create an array class that has a name attribute (★★☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "b48ca5f5",
+   "metadata": {
+    "papermill": {
+     "duration": 0.01962,
+     "end_time": "2025-06-25T11:25:18.092792",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:18.073172",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1fb7f08f",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019867,
+     "end_time": "2025-06-25T11:25:18.133090",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:18.113223",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 64. Consider a given vector, how to add 1 to each element indexed by a second vector (be careful with repeated indices)? (★★★)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "639a6123",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019437,
+     "end_time": "2025-06-25T11:25:18.173377",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:18.153940",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d8048bf2",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019147,
+     "end_time": "2025-06-25T11:25:18.212275",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:18.193128",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 65. How to accumulate elements of a vector (X) to an array (F) based on an index list (I)? (★★★)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "52d80a50",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020293,
+     "end_time": "2025-06-25T11:25:18.251746",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:18.231453",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "da445c53",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019118,
+     "end_time": "2025-06-25T11:25:18.290650",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:18.271532",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 66. Considering a (w,h,3) image of (dtype=ubyte), compute the number of unique colors (★★☆)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "b857d367",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020582,
+     "end_time": "2025-06-25T11:25:18.330443",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:18.309861",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ab2b549d",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019285,
+     "end_time": "2025-06-25T11:25:18.369100",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:18.349815",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 67. Considering a four dimensions array, how to get sum over the last two axis at once? (★★★)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "1a64afd6",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019684,
+     "end_time": "2025-06-25T11:25:18.408801",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:18.389117",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a113d0c4",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020348,
+     "end_time": "2025-06-25T11:25:18.450452",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:18.430104",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 68. Considering a one-dimensional vector D, how to compute means of subsets of D using a vector S of same size describing subset  indices? (★★★)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "711da572",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019832,
+     "end_time": "2025-06-25T11:25:18.490192",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:18.470360",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "73932166",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019228,
+     "end_time": "2025-06-25T11:25:18.529262",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:18.510034",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 69. How to get the diagonal of a dot product? (★★★)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "8d77a834",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019227,
+     "end_time": "2025-06-25T11:25:18.568695",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:18.549468",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f04949f8",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020094,
+     "end_time": "2025-06-25T11:25:18.608096",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:18.588002",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 70. Consider the vector [1, 2, 3, 4, 5], how to build a new vector with 3 consecutive zeros interleaved between each value? (★★★)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "ee9f2184",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019588,
+     "end_time": "2025-06-25T11:25:18.647844",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:18.628256",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b14d83c2",
+   "metadata": {
+    "papermill": {
+     "duration": 0.01996,
+     "end_time": "2025-06-25T11:25:18.687130",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:18.667170",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 71. Consider an array of dimension (5,5,3), how to multiply it by an array with dimensions (5,5)? (★★★)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "2218c53d",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020666,
+     "end_time": "2025-06-25T11:25:18.727385",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:18.706719",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "034cb56b",
+   "metadata": {
+    "papermill": {
+     "duration": 0.02043,
+     "end_time": "2025-06-25T11:25:18.767673",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:18.747243",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 72. How to swap two rows of an array? (★★★)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "703c473b",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019386,
+     "end_time": "2025-06-25T11:25:18.807016",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:18.787630",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f51885d7",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019231,
+     "end_time": "2025-06-25T11:25:18.845661",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:18.826430",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 73. Consider a set of 10 triplets describing 10 triangles (with shared vertices), find the set of unique line segments composing all the  triangles (★★★)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "cd137fb5",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019945,
+     "end_time": "2025-06-25T11:25:18.886531",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:18.866586",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a17b8a09",
+   "metadata": {
+    "papermill": {
+     "duration": 0.02099,
+     "end_time": "2025-06-25T11:25:18.928423",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:18.907433",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 74. Given a sorted array C that corresponds to a bincount, how to produce an array A such that np.bincount(A) == C? (★★★)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "8a5dd4a0",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019535,
+     "end_time": "2025-06-25T11:25:18.967478",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:18.947943",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2544085c",
+   "metadata": {
+    "papermill": {
+     "duration": 0.0201,
+     "end_time": "2025-06-25T11:25:19.007722",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:18.987622",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 75. How to compute averages using a sliding window over an array? (★★★)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "609393ec",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020004,
+     "end_time": "2025-06-25T11:25:19.048047",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:19.028043",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d07661cd",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019365,
+     "end_time": "2025-06-25T11:25:19.087238",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:19.067873",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 76. Consider a one-dimensional array Z, build a two-dimensional array whose first row is (Z[0],Z[1],Z[2]) and each subsequent row is  shifted by 1 (last row should be (Z[-3],Z[-2],Z[-1]) (★★★)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "6c79f490",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019575,
+     "end_time": "2025-06-25T11:25:19.126213",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:19.106638",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2d288be5",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020124,
+     "end_time": "2025-06-25T11:25:19.166986",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:19.146862",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 77. How to negate a boolean, or to change the sign of a float inplace? (★★★)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "7c54d577",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020782,
+     "end_time": "2025-06-25T11:25:19.207775",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:19.186993",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "da388735",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020895,
+     "end_time": "2025-06-25T11:25:19.249853",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:19.228958",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 78. Consider 2 sets of points P0,P1 describing lines (2d) and a point p, how to compute distance from p to each line i (P0[i],P1[i])? (★★★)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "54973f67",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020215,
+     "end_time": "2025-06-25T11:25:19.291081",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:19.270866",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f93c921d",
+   "metadata": {
+    "papermill": {
+     "duration": 0.01915,
+     "end_time": "2025-06-25T11:25:19.329424",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:19.310274",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 79. Consider 2 sets of points P0,P1 describing lines (2d) and a set of points P, how to compute distance from each point j (P[j]) to each line i (P0[i],P1[i])? (★★★)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "23a61f7c",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019639,
+     "end_time": "2025-06-25T11:25:19.369036",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:19.349397",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e42eec4a",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019626,
+     "end_time": "2025-06-25T11:25:19.408654",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:19.389028",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 80. Consider an arbitrary array, write a function that extracts a subpart with a fixed shape and centered on a given element (pad with a `fill` value when necessary) (★★★)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "31a34531",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019593,
+     "end_time": "2025-06-25T11:25:19.447615",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:19.428022",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e98fd900",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019324,
+     "end_time": "2025-06-25T11:25:19.486573",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:19.467249",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 81. Consider an array Z = [1,2,3,4,5,6,7,8,9,10,11,12,13,14], how to generate an array R = [[1,2,3,4], [2,3,4,5], [3,4,5,6], ..., [11,12,13,14]]? (★★★)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "414e864b",
+   "metadata": {
+    "papermill": {
+     "duration": 0.01957,
+     "end_time": "2025-06-25T11:25:19.525844",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:19.506274",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "aa73c171",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019669,
+     "end_time": "2025-06-25T11:25:19.565426",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:19.545757",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 82. Compute a matrix rank (★★★)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "3a479cf6",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019021,
+     "end_time": "2025-06-25T11:25:19.603923",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:19.584902",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ccae543b",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019483,
+     "end_time": "2025-06-25T11:25:19.645076",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:19.625593",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 83. How to find the most frequent value in an array?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "ecba910a",
+   "metadata": {
+    "papermill": {
+     "duration": 0.018864,
+     "end_time": "2025-06-25T11:25:19.683396",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:19.664532",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1c2e7404",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019424,
+     "end_time": "2025-06-25T11:25:19.722391",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:19.702967",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 84. Extract all the contiguous 3x3 blocks from a random 10x10 matrix (★★★)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "170c4ada",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019013,
+     "end_time": "2025-06-25T11:25:19.761166",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:19.742153",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "bdacf7db",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019847,
+     "end_time": "2025-06-25T11:25:19.800452",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:19.780605",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 85. Create a 2D array subclass such that Z[i,j] == Z[j,i] (★★★)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a69fa678",
+   "metadata": {
+    "papermill": {
+     "duration": 0.01939,
+     "end_time": "2025-06-25T11:25:19.839650",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:19.820260",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2927ec0c",
+   "metadata": {
+    "papermill": {
+     "duration": 0.02064,
+     "end_time": "2025-06-25T11:25:19.880736",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:19.860096",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 86. Consider a set of p matrices with shape (n,n) and a set of p vectors with shape (n,1). How to compute the sum of of the p matrix products at once? (result has shape (n,1)) (★★★)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "d36b10fd",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020333,
+     "end_time": "2025-06-25T11:25:19.922255",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:19.901922",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e35436ab",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019597,
+     "end_time": "2025-06-25T11:25:19.962415",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:19.942818",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 87. Consider a 16x16 array, how to get the block-sum (block size is 4x4)? (★★★)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "fcc5c878",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020338,
+     "end_time": "2025-06-25T11:25:20.003000",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:19.982662",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "8682031b",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020015,
+     "end_time": "2025-06-25T11:25:20.042481",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:20.022466",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 88. How to implement the Game of Life using numpy arrays? (★★★)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "84edadb6",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019071,
+     "end_time": "2025-06-25T11:25:20.081944",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:20.062873",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "314e9e0d",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019397,
+     "end_time": "2025-06-25T11:25:20.121208",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:20.101811",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 89. How to get the n largest values of an array (★★★)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "8a480dcb",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020434,
+     "end_time": "2025-06-25T11:25:20.161232",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:20.140798",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "887cad94",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019722,
+     "end_time": "2025-06-25T11:25:20.201612",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:20.181890",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 90. Given an arbitrary number of vectors, build the cartesian product (every combination of every item) (★★★)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "01565569",
+   "metadata": {
+    "papermill": {
+     "duration": 0.02016,
+     "end_time": "2025-06-25T11:25:20.241394",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:20.221234",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a5a774d9",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020918,
+     "end_time": "2025-06-25T11:25:20.282196",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:20.261278",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 91. How to create a record array from a regular array? (★★★)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "e238abb6",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020857,
+     "end_time": "2025-06-25T11:25:20.323011",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:20.302154",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e5259ab7",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020908,
+     "end_time": "2025-06-25T11:25:20.363692",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:20.342784",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 92. Consider a large vector Z, compute Z to the power of 3 using 3 different methods (★★★)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "2e5070d5",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019897,
+     "end_time": "2025-06-25T11:25:20.403592",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:20.383695",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "cf9856ba",
+   "metadata": {
+    "papermill": {
+     "duration": 0.018998,
+     "end_time": "2025-06-25T11:25:20.441835",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:20.422837",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 93. Consider two arrays A and B of shape (8,3) and (2,2). How to find rows of A that contain elements of each row of B regardless of the order of the elements in B? (★★★)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "120fc183",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019202,
+     "end_time": "2025-06-25T11:25:20.481128",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:20.461926",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c7997c8f",
+   "metadata": {
+    "papermill": {
+     "duration": 0.021057,
+     "end_time": "2025-06-25T11:25:20.521969",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:20.500912",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 94. Considering a 10x3 matrix, extract rows with unequal values (e.g. [2,2,3]) (★★★)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "7357f58e",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019871,
+     "end_time": "2025-06-25T11:25:20.562880",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:20.543009",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "5a8e98eb",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019047,
+     "end_time": "2025-06-25T11:25:20.601249",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:20.582202",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 95. Convert a vector of ints into a matrix binary representation (★★★)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "563ece40",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020373,
+     "end_time": "2025-06-25T11:25:20.643389",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:20.623016",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "5a08a969",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020448,
+     "end_time": "2025-06-25T11:25:20.683963",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:20.663515",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 96. Given a two dimensional array, how to extract unique rows? (★★★)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "8ecfcc6c",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019673,
+     "end_time": "2025-06-25T11:25:20.724185",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:20.704512",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "23bd752d",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020434,
+     "end_time": "2025-06-25T11:25:20.764702",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:20.744268",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 97. Considering 2 vectors A & B, write the einsum equivalent of inner, outer, sum, and mul function (★★★)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "48f41ceb",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019838,
+     "end_time": "2025-06-25T11:25:20.805372",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:20.785534",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b079f574",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019469,
+     "end_time": "2025-06-25T11:25:20.844446",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:20.824977",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 98. Considering a path described by two vectors (X,Y), how to sample it using equidistant samples (★★★)?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "afa330ac",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020002,
+     "end_time": "2025-06-25T11:25:20.884660",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:20.864658",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "9500ffc1",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019283,
+     "end_time": "2025-06-25T11:25:20.923955",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:20.904672",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 99. Given an integer n and a 2D array X, select from X the rows which can be interpreted as draws from a multinomial distribution with n degrees, i.e., the rows which only contain integers and which sum to n. (★★★)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "4ab2126e",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019453,
+     "end_time": "2025-06-25T11:25:20.963387",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:20.943934",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a18879f4",
+   "metadata": {
+    "papermill": {
+     "duration": 0.019969,
+     "end_time": "2025-06-25T11:25:21.002783",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:20.982814",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#### 100. Compute bootstrapped 95% confidence intervals for the mean of a 1D array X (i.e., resample the elements of an array with replacement N times, compute the mean of each sample, and then compute percentiles over the means). (★★★)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "8fa59642",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020311,
+     "end_time": "2025-06-25T11:25:21.043551",
+     "exception": false,
+     "start_time": "2025-06-25T11:25:21.023240",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kaggle": {
+   "accelerator": "none",
+   "dataSources": [],
+   "dockerImageVersionId": 31040,
+   "isGpuEnabled": false,
+   "isInternetEnabled": true,
+   "language": "python",
+   "sourceType": "notebook"
+  },
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.11.11"
+  },
+  "papermill": {
+   "default_parameters": {},
+   "duration": 13.35953,
+   "end_time": "2025-06-25T11:25:21.484667",
+   "environment_variables": {},
+   "exception": null,
+   "input_path": "__notebook__.ipynb",
+   "output_path": "__notebook__.ipynb",
+   "parameters": {},
+   "start_time": "2025-06-25T11:25:08.125137",
+   "version": "2.6.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
