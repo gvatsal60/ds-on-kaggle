@@ -38,7 +38,7 @@ repos:
       - id: requirements-txt-fixer
       - id: trailing-whitespace
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: "v0.14.3"
+    rev: "v0.14.4"
     hooks:
       - id: ruff-check
         args: [--fix]
@@ -54,7 +54,7 @@ repos:
     hooks:
       - id: mypy
   - repo: https://github.com/asottile/pyupgrade
-    rev: "v3.21.0"
+    rev: "v3.21.1"
     hooks:
       - id: pyupgrade
   - repo: https://github.com/hhatto/autopep8
@@ -113,7 +113,7 @@ repos:
       - id: sqlfluff-fix
   # Gitleaks for detecting secrets in Git repositories
   - repo: https://github.com/gitleaks/gitleaks
-    rev: "v8.28.0"
+    rev: "v8.29.0"
     hooks:
       - id: gitleaks
   # Talisman for pre-commit Git hooks to detect sensitive files
