@@ -1,7 +1,7 @@
 repos:
   # Syncs pre-commit dependencies with the latest versions.
   - repo: https://github.com/mxr/sync-pre-commit-deps
-    rev: "v0.0.3"
+    rev: "v0.0.4"
     hooks:
       - id: sync-pre-commit-deps
   # Pre-commit hooks for general file checks
@@ -38,7 +38,7 @@ repos:
       - id: requirements-txt-fixer
       - id: trailing-whitespace
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: "v0.15.12"
+    rev: "v0.15.13"
     hooks:
       - id: ruff-check
         args: [--fix]
@@ -50,7 +50,7 @@ repos:
       - id: python-use-type-annotations
   # Runs mypy to check Python type annotations.
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: "v2.0.0"
+    rev: "v2.1.0"
     hooks:
       - id: mypy
   - repo: https://github.com/asottile/pyupgrade
@@ -107,7 +107,7 @@ repos:
       - id: codespell
   # SQLFluff for linting and fixing SQL files
   - repo: https://github.com/sqlfluff/sqlfluff
-    rev: "4.1.0"
+    rev: "4.2.1"
     hooks:
       - id: sqlfluff-lint
       - id: sqlfluff-fix
