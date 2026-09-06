@@ -41,7 +41,7 @@ repos:
     rev: "v0.16.5"
     hooks:
       - id: ruff-check
-        args: [--fix]
+        args: [--fix, --unsafe-fixes]
       - id: ruff-format
   # Uses pygrep to enforce Python type annotations.
   - repo: https://github.com/pre-commit/pygrep-hooks
