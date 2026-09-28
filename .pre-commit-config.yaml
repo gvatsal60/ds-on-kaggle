@@ -38,7 +38,7 @@ repos:
       - id: requirements-txt-fixer
       - id: trailing-whitespace
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: "v0.16.8"
+    rev: "v0.16.9"
     hooks:
       - id: ruff-check
         args: [--fix, --unsafe-fixes]
@@ -62,12 +62,12 @@ repos:
     hooks:
       - id: autopep8
   - repo: https://github.com/pycqa/isort
-    rev: "9.0.1"
+    rev: "9.0.2"
     hooks:
       - id: isort
         name: isort (python)
   - repo: https://github.com/pycqa/flake8
-    rev: "7.3.0"
+    rev: "7.4.1"
     hooks:
       - id: flake8
   - repo: meta
