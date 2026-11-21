@@ -1,0 +1,43 @@
+name: Sync kaggle/dev
+on:
+  push:
+    branches: ["master"]
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: sync-kaggle-dev
+  cancel-in-progress: false
+jobs:
+  sync:
+    name: Fast-forward kaggle/dev to master
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Fast-forward kaggle/dev to master
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin master kaggle/dev
+
+          DEV_SHA="$(git rev-parse origin/kaggle/dev)"
+          MASTER_SHA="$(git rev-parse origin/master)"
+
+          if [ "${DEV_SHA}" = "${MASTER_SHA}" ]; then
+            echo "kaggle/dev is already at master (${MASTER_SHA})."
+            exit 0
+          fi
+
+          if git merge-base --is-ancestor "${DEV_SHA}" "${MASTER_SHA}"; then
+            echo "Fast-forwarding kaggle/dev ${DEV_SHA} -> ${MASTER_SHA}"
+            git push origin "${MASTER_SHA}:refs/heads/kaggle/dev"
+            exit 0
+          fi
+
+          echo "::error::kaggle/dev (${DEV_SHA}) has commits not in master (${MASTER_SHA}). Refusing to overwrite - merge master into kaggle/dev manually or rebase it."
+          exit 1
